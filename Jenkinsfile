@@ -6,13 +6,13 @@ pipeline {
   stages {
     stage('Build') {
       steps{
-        sh 'mvn compile -f RiskMeter/pom.xml'
+        sh 'mvn compile -f ./pom.xml'
       } 
     }
 
     stage('Test') {
       steps {
-        sh 'mvn test -f RiskMeter/pom.xml'
+        sh 'mvn test -f ./pom.xml'
       }
     }
 
