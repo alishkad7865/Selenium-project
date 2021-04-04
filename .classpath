@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-12">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/alish/OneDrive/Documents/Ense 375/ENSE375-groupE/selenium/client-combined-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/alish/OneDrive/Documents/Ense 375/ENSE375-groupE/selenium/client-combined-3.141.59-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/alish/OneDrive/Documents/Ense 375/ENSE375-groupE/selenium/junit-platform-console-standalone-1.7.0-all.jar"/>
+	<classpathentry kind="lib" path="C:/Users/alish/Documents/selenium/libs/byte-buddy-1.8.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/alish/Documents/selenium/libs/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/alish/Documents/selenium/libs/guava-25.0-jre.jar"/>
+	<classpathentry kind="lib" path="C:/Users/alish/Documents/selenium/libs/okhttp-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/alish/Documents/selenium/libs/okio-1.14.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
