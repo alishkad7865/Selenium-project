@@ -1,6 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.junit.jupiter.api.*;
@@ -40,8 +40,9 @@ public class SeleniumFileTest {
 
     @Test
     public void testgooglrsearch() {
+        ChromeDriver driver;
         System.setProperty("webdriver.chrome.driver","./lib/chromedriver.exe");
-         System.setProperty("webdriver.gecko.driver","./lib/geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver","./lib/geckodriver.exe");
         driver = new ChromeDriver();
         driver.get("https://opensource-demo.orangehrmlive.com");
         driver.getTitle();
