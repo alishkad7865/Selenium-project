@@ -22,17 +22,12 @@ public class SeleniumFileTest {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
         capabilities.setCapability("version", "89");
-        capabilities.setCapability("platform", "win10"); // If this cap isn't specified, it will just get any available one
-        capabilities.setCapability("build", "LambdaTestSampleApp");
-        capabilities.setCapability("name", "LambdaTestJavaSample");
         capabilities.setCapability("network", true); // To enable network logs
         capabilities.setCapability("visual", true); // To enable step by step screenshot
         capabilities.setCapability("video", true); // To enable video recording
         capabilities.setCapability("console", true); // To capture console logs
 
  capabilities.setCapability("selenium_version","4.0.0-alpha-7");
-         capabilities.setCapability("timezone","UTC+05:30");
-         capabilities.setCapability("geoLocation","IN");
          capabilities.setCapability("chrome.driver","89");
          
          //driver.get("https://opensource-demo.orangehrmlive.com");
@@ -40,10 +35,9 @@ public class SeleniumFileTest {
 
     @Test
     public void testgooglrsearch() {
-        
         System.setProperty("webdriver.chrome.driver","./lib/chromedriver.exe");
         System.setProperty("webdriver.gecko.driver","./lib/geckodriver.exe");
-        ChromeDriver driver= new ChromeDriver();
+        WebDriver driver= new FirefoxDriver();
         driver.get("https://opensource-demo.orangehrmlive.com");
         driver.getTitle();
         // we expect the title “Google “ should be present
