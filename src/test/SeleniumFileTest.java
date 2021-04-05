@@ -9,13 +9,19 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.File;
 import java.net.URL;
 import java.net.MalformedURLException;
+import org.junit.AfterClass;
+import org.junit.Before;
 
 public class SeleniumFileTest {
-    @Test
-    public void testgooglrsearch() {
+    WebDriver driver;
+    String Expectedtitle = "";
+    String Actualtitle="";
+    
+    @Before
+    public void setup(){
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("version", "77.0");
+        capabilities.setCapability("version", "89");
         capabilities.setCapability("platform", "win10"); // If this cap isn't specified, it will just get any available one
         capabilities.setCapability("build", "LambdaTestSampleApp");
         capabilities.setCapability("name", "LambdaTestJavaSample");
@@ -24,49 +30,38 @@ public class SeleniumFileTest {
         capabilities.setCapability("video", true); // To enable video recording
         capabilities.setCapability("console", true); // To capture console logs
 
- capabilities.setCapability("selenium_version","4.0.0-alpha-2");
+ capabilities.setCapability("selenium_version","4.0.0-alpha-7");
          capabilities.setCapability("timezone","UTC+05:30");
          capabilities.setCapability("geoLocation","IN");
-         capabilities.setCapability("chrome.driver","78.0");
-        try {
-            WebDriver driver = new RemoteWebDriver(new URL("https://www.google.com"), capabilities);
-            driver.getTitle();
-            driver.get("https://opensource-demo.orangehrmlive.com");
-            // we expect the title “Google “ should be present
-            String Expectedtitle = "OrangeHRM";
-            // it will fetch the actual title
-            String Actualtitle = driver.getTitle();
-            System.out.println("Before Assetion " + Expectedtitle + Actualtitle);
-            // it will compare actual title and expected title
-            assertEquals(Actualtitle, Expectedtitle);
-            // print out the result
-            System.out.println("After Assertion " + Expectedtitle + Actualtitle + " Title matched ");
-        
-        } catch (MalformedURLException e) {
-            System.out.println("Invalid grid URL");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        System.setProperty("webdriver.gecko.driver","./lib/geckodriver.exe");
-
-        // WebDriver driver1 = new RemoteWebDriver("http://localhost:9515",DesiredCapabilities.firefox());
-        // driver1.get("http://www.google.com");
-
-        //WebDriver driver = new FirefoxDriver();
-        //driver.getTitle();
-        // it will open the goggle page
-        // driver.get("https://opensource-demo.orangehrmlive.com");
-        // // we expect the title “Google “ should be present
-        // String Expectedtitle = "OrangeHRM";
-        // // it will fetch the actual title
-        // String Actualtitle = driver.getTitle();
-        // System.out.println("Before Assetion " + Expectedtitle + Actualtitle);
-        // // it will compare actual title and expected title
-        // assertEquals(Actualtitle, Expectedtitle);
-        // // print out the result
-        // System.out.println("After Assertion " + Expectedtitle + Actualtitle + " Title matched ");
+         capabilities.setCapability("chrome.driver","89");
+         
+         //driver.get("https://opensource-demo.orangehrmlive.com");
     }
 
+    @Test
+    public void testgooglrsearch() {
+        System.setProperty("webdriver.chrome.driver","./lib/chromedriver.exe");
+         System.setProperty("webdriver.gecko.driver","./lib/geckodriver.exe");
+        driver = new ChromeDriver();
+        driver.get("https://opensource-demo.orangehrmlive.com");
+        driver.getTitle();
+        // we expect the title “Google “ should be present
+        Expectedtitle = "OrangeHRM";
+        // it will fetch the actual title
+        Actualtitle = driver.getTitle();
+        System.out.println("Before Assetion " + Expectedtitle + Actualtitle);
+        // it will compare actual title and expected title
+        assertEquals(Actualtitle, Expectedtitle);
+        // print out the result
+        System.out.println("After Assertion " + Expectedtitle + Actualtitle + " Title matched ");
+    }
+
+    @AfterClass
+    public void close(){
+        if (driver != null) {
+            driver.quit();
+        }
+    }
     @Test
     public void alwaysTrue() {
         assertTrue(true);
