@@ -40,10 +40,9 @@ public class SeleniumFileTest {
 
     @Test
     public void testgooglrsearch() {
-        ChromeDriver driver;
+        ChromeDriver driver= new ChromeDriver();
         System.setProperty("webdriver.chrome.driver","./lib/chromedriver.exe");
         System.setProperty("webdriver.gecko.driver","./lib/geckodriver.exe");
-        driver = new ChromeDriver();
         driver.get("https://opensource-demo.orangehrmlive.com");
         driver.getTitle();
         // we expect the title “Google “ should be present
