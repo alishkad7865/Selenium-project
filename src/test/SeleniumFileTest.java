@@ -42,8 +42,8 @@ public class SeleniumFileTest {
     @Test
     public void testgooglrsearch() {
         System.setProperty("webdriver.chrome.driver","./lib/chromedriver.exe");
-        System.setProperty("webdriver.gecko.driver","./lib/geckodriver.exe");
-        WebDriver driver= new FirefoxDriver();
+        System.setProperty("webdriver.gecko.driver","./lib/geckodriver");
+        WebDriver driver= new ChromeDriver();
         driver.get("https://opensource-demo.orangehrmlive.com");
         driver.getTitle();
         Expectedtitle = "OrangeHRM";
